@@ -1,4 +1,5 @@
 var Letter = require('./Letter.js');
+var chalk = require('chalk');
 
 Word = function(wordChar) {
 
@@ -16,7 +17,7 @@ Word = function(wordChar) {
         for (var i = 0; i < this.wordArr.length; i++) {
             this.currentState.push(this.wordArr[i].getChars());
         }
-        console.log(this.currentState.join(' '));
+        console.log(chalk.blue(this.currentState.join(' ')));
     }
 
     this.guess = function(guessChar) {

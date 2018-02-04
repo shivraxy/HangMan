@@ -32,6 +32,7 @@ function userInput() {
             if (scoreUpdate === 100099) {
                 vWon = vWon + 1;
                 process.stdout.write('\x1Bc');
+                console.log(chalk.bgGreen(currentMovie));
                 console.log(chalk.green('You Win !!!!!'));
                 displayScore();
                 play_again();
@@ -84,9 +85,9 @@ function play() {
             return console.log(error);
         data = data.replace(/\r|\n/g, '');
         var dataArr = data.split(",");
-
-        // uncomment to get movie name in the console 
-        //console.log(dataArr[moviePosition].trim());
+        currentMovie = dataArr[moviePosition]
+            // uncomment to get movie name in the console 
+            //console.log(dataArr[moviePosition].trim());
 
         word = new Word(dataArr[moviePosition]);
         word.assign();
@@ -97,10 +98,10 @@ function play() {
 
 
 function displayScore() {
-    console.log('Won :' + vWon);
-    console.log('Lost :' + vLost);
-    console.log('Guessed :' + vGuessed);
-    console.log('Chances Remaining :' + vChances);
+    console.log(chalk.green('Won :' + vWon));
+    console.log(chalk.red('Lost :' + vLost));
+    console.log(chalk.cyan('Guessed :') + vGuessed);
+    console.log(chalk.bgMagenta('Chances Remaining :' + vChances));
 }
 
 // Get a Random movie name
