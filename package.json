@@ -18,6 +18,8 @@
   "homepage": "https://github.com/shivraxy/HangMan#readme",
   "dependencies": {
     "chalk": "^2.3.0",
-    "inquirer": "^5.0.1"
+    "inquirer": "^5.0.1",
+    "prompt": "^1.0.0",
+    "request": "^2.83.0"
   }
 }

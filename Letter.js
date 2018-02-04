@@ -9,14 +9,12 @@ Letter = function(char) {
             return ('_')
     }
     this.checkChar = function(inputCharacter) {
-        if (this.character === inputCharacter)
+        if (this.character.toUpperCase() === inputCharacter.toUpperCase()) {
             this.guessed = true;
+            return 1;
+        }
 
     }
 }
 
 module.exports = Letter;
-
-// var letter = new Letter('a');
-// letter.checkChar('a');
-// letter.display();

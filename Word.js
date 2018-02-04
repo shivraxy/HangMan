@@ -13,7 +13,6 @@ Word = function(wordChar) {
 
     this.display = function() {
         this.currentState = []; //reset it everytime
-        console.log("Display : No of Chars >> " + this.wordArr.length);
         for (var i = 0; i < this.wordArr.length; i++) {
             this.currentState.push(this.wordArr[i].getChars());
         }
@@ -21,20 +20,27 @@ Word = function(wordChar) {
     }
 
     this.guess = function(guessChar) {
-
+        var returnsum = 0
+        var alldone = true;
         for (var i = 0; i < this.wordArr.length; i++) {
-            this.wordArr[i].checkChar(guessChar);
+            num = this.wordArr[i].checkChar(guessChar)
+            if (isNaN(num))
+                num = 0;
+            returnsum = returnsum + num;
+
+            //checking if all characters have been gussed 
+
+            if (this.wordArr[i].guessed === false)
+                alldone = false;
+
         }
+
+        if (alldone === false)
+            return returnsum;
+        else
+            return 100099; // number to determine all the characters have been guessed
     }
 
 }
 
-
-wordChar = "Kingdom";
-
-var word = new Word(wordChar);
-word.assign();
-word.display();
-word.guess('g');
-word.guess('K');
-word.display();
+module.exports = Word;
