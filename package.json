@@ -1,0 +1,23 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "hangman game using constructors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivraxy/HangMan.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivraxy/HangMan/issues"
+  },
+  "homepage": "https://github.com/shivraxy/HangMan#readme",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "inquirer": "^5.0.1"
+  }
+}
